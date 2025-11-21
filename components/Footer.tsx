@@ -13,10 +13,10 @@ const Footer: React.FC = () => {
               </div>
               <span className="font-semibold text-white text-lg">Nugnics</span>
             </div>
-            <div className="text-sm text-gray-400 max-w-xs">
+            {/* <div className="text-sm text-gray-400 max-w-xs">
               <p>71-75 Shelton Street, Covent Garden</p>
               <p>London, United Kingdom, WC2H 9JQ</p>
-            </div>
+            </div> */}
           </div>
 
           <div className="flex flex-col items-start md:items-end gap-4">
@@ -28,9 +28,15 @@ const Footer: React.FC = () => {
                 Terms of Service
               </a> */}
             </div>
-            <div className="text-xs text-gray-600">
-              © {new Date().getFullYear()} Nugnics AI Limited. All rights
-              reserved.
+            <div className="text-xs text-gray-600 text-left md:text-right">
+              <p>
+                © {new Date().getFullYear()} Nugnics AI Limited. All rights
+                reserved.
+              </p>
+              <p className="mt-2">
+                71-75 Shelton Street, Covent Garden, London, United Kingdom,
+                WC2H 9JQ
+              </p>
             </div>
           </div>
         </div>
