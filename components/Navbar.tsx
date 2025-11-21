@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Bot, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,8 +49,12 @@ const Navbar: React.FC = () => {
       <div className="mx-auto max-w-6xl rounded-full bg-white/5 backdrop-blur-md border border-white/10 px-6 py-3 flex items-center justify-between">
         {/* Logo */}
         <div className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-violet-600 text-white shadow-lg shadow-violet-500/30">
-            <Bot size={20} />
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg overflow-hidden shadow-lg shadow-violet-500/30">
+            <img
+              src="/icons/nugenics.svg"
+              alt="Nugnics Logo"
+              className="w-full h-full object-contain"
+            />
           </div>
           <span className="font-semibold text-lg tracking-tight text-white">
             Nugnics

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ArrowRight, Loader2, CheckCircle, Bot } from "lucide-react";
+import { ArrowRight, Loader2, CheckCircle } from "lucide-react";
 import { Placeholder } from "./Placeholder";
 import { saveEmail } from "../firebase";
 import Snackbar from "./Snackbar";
@@ -157,8 +157,12 @@ const Hero: React.FC = () => {
             </div>
 
             <div className="absolute -right-8 bottom-1/4 hidden md:flex items-center gap-3 bg-neutral-800/90 border border-white/10 p-3 rounded-xl shadow-lg backdrop-blur-md animate-bounce duration-[4000ms]">
-              <div className="h-8 w-8 rounded-full bg-violet-600 flex items-center justify-center text-xs">
-                <Bot size={20} />
+              <div className="h-8 w-8 rounded-full overflow-hidden flex items-center justify-center">
+                <img
+                  src="/icons/nugenics.svg"
+                  alt="AI"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div className="flex flex-col text-left">
                 <span className="text-xs font-medium">Ticket Resolved</span>
@@ -168,8 +172,12 @@ const Hero: React.FC = () => {
 
             {/* AI Message */}
             <div className="absolute -left-16 top-[70%] hidden md:flex items-start gap-3 bg-neutral-800/90 border border-white/10 p-3 rounded-xl shadow-lg backdrop-blur-md animate-bounce duration-[3500ms] max-w-[280px]">
-              <div className="h-8 w-8 rounded-full bg-violet-600 flex items-center justify-center text-xs font-semibold flex-shrink-0">
-                <Bot size={20} />
+              <div className="h-8 w-8 rounded-full overflow-hidden flex items-center justify-center flex-shrink-0">
+                <img
+                  src="/icons/nugenics.svg"
+                  alt="AI"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div className="flex flex-col text-left">
                 <span className="text-xs font-medium text-white">

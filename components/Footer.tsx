@@ -1,5 +1,5 @@
 import React from "react";
-import { Bot, Twitter, Github, Linkedin } from "lucide-react";
+import { Twitter, Github, Linkedin } from "lucide-react";
 
 const Footer: React.FC = () => {
   return (
@@ -8,8 +8,12 @@ const Footer: React.FC = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-8">
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-violet-600 text-white">
-                <Bot size={20} />
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg overflow-hidden">
+                <img
+                  src="/icons/nugenics.svg"
+                  alt="Nugnics Logo"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <span className="font-semibold text-white text-lg">Nugnics</span>
             </div>
