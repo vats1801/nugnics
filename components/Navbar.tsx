@@ -58,29 +58,29 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+        <div className="hidden md:flex items-center gap-2 text-sm font-medium text-gray-300">
           <a
             href="#"
             onClick={(e) => handleSmoothScroll(e, "#")}
-            className="hover:text-white transition-colors"
+            className="px-4 py-2 rounded-full hover:bg-white/10 hover:text-white transition-all"
           >
             Home
           </a>
           <a
             href="#features"
             onClick={(e) => handleSmoothScroll(e, "#features")}
-            className="hover:text-white transition-colors"
+            className="px-4 py-2 rounded-full hover:bg-white/10 hover:text-white transition-all"
           >
             Features
           </a>
           <a
             href="#use-cases"
             onClick={(e) => handleSmoothScroll(e, "#use-cases")}
-            className="hover:text-white transition-colors"
+            className="px-4 py-2 rounded-full hover:bg-white/10 hover:text-white transition-all"
           >
             Use Cases
           </a>
-          {/* <a href="#pricing" className="hover:text-white transition-colors">Pricing</a> */}
+          {/* <a href="#pricing" className="px-4 py-2 rounded-full hover:bg-white/10 hover:text-white transition-all">Pricing</a> */}
         </div>
 
         {/* CTA */}
@@ -108,21 +108,21 @@ const Navbar: React.FC = () => {
           <a
             href="#"
             onClick={(e) => handleSmoothScroll(e, "#")}
-            className="text-gray-300 hover:text-white"
+            className="px-4 py-2 rounded-full text-gray-300 hover:bg-white/10 hover:text-white transition-all"
           >
             Home
           </a>
           <a
             href="#features"
             onClick={(e) => handleSmoothScroll(e, "#features")}
-            className="text-gray-300 hover:text-white"
+            className="px-4 py-2 rounded-full text-gray-300 hover:bg-white/10 hover:text-white transition-all"
           >
             Features
           </a>
           <a
             href="#use-cases"
             onClick={(e) => handleSmoothScroll(e, "#use-cases")}
-            className="text-gray-300 hover:text-white"
+            className="px-4 py-2 rounded-full text-gray-300 hover:bg-white/10 hover:text-white transition-all"
           >
             Use Cases
           </a>

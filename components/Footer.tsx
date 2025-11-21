@@ -13,12 +13,15 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="flex gap-6 text-sm text-gray-400">
-          <a href="#" className="hover:text-white transition-colors">
+          {/* <a href="#" className="hover:text-white transition-colors">
             Privacy Policy
           </a>
           <a href="#" className="hover:text-white transition-colors">
             Terms of Service
-          </a>
+          </a> */}
+          <div className=" text-center text-xs text-gray-600">
+            © {new Date().getFullYear()} Nugnics. All rights reserved.
+          </div>
           {/* <a href="#" className="hover:text-white transition-colors">
             Cookie Policy
           </a> */}
@@ -36,9 +39,9 @@ const Footer: React.FC = () => {
           </a>
         </div> */}
       </div>
-      <div className="mt-8 text-center text-xs text-gray-600">
+      {/* <div className="mt-8 text-center text-xs text-gray-600">
         © {new Date().getFullYear()} Nugnics. All rights reserved.
-      </div>
+      </div> */}
     </footer>
   );
 };

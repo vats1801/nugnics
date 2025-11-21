@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ArrowRight, Loader2, CheckCircle } from "lucide-react";
+import { ArrowRight, Loader2, CheckCircle, Bot } from "lucide-react";
 import { Placeholder } from "./Placeholder";
 import { saveEmail } from "../firebase";
 import Snackbar from "./Snackbar";
@@ -82,62 +82,71 @@ const Hero: React.FC = () => {
         </p>
 
         {/* Input Group */}
-        <div
-          id="email-input"
-          className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-16 w-full max-w-xl mx-auto"
-        >
-          <div className="w-full flex flex-col gap-2">
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" && !isLoading && !isSuccess) {
-                  handleSubmit();
-                }
-              }}
-              placeholder="Enter your business email"
-              className="w-full bg-white/5 border border-white/10 text-white px-5 py-3 rounded-full outline-none focus:border-violet-500 transition-colors placeholder:text-gray-600"
-            />
+        <div id="email-input" className="mb-16 w-full max-w-xl mx-auto">
+          <div className="relative flex items-center rounded-full bg-gradient-to-r from-blue-500/20 via-violet-500/20 to-blue-500/20 p-[2px] border border-transparent bg-clip-padding">
+            {/* Gradient border effect */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400/50 via-violet-400/50 to-blue-400/50 -z-10 blur-sm"></div>
+
+            <div className="flex flex-1 items-center rounded-full bg-[#050505] overflow-hidden">
+              {/* Input Field */}
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" && !isLoading && !isSuccess) {
+                    handleSubmit();
+                  }
+                }}
+                placeholder="Enter your business email"
+                className="flex-1 bg-transparent text-white px-6 py-4 outline-none placeholder:text-gray-500 text-sm"
+              />
+
+              {/* Button */}
+              <button
+                onClick={handleSubmit}
+                disabled={isLoading || isSuccess}
+                className={`whitespace-nowrap px-6 py-4 rounded-full transition-all font-medium flex items-center justify-center gap-2 ${
+                  isSuccess
+                    ? "bg-green-600 text-white"
+                    : isLoading
+                    ? "bg-gradient-to-r from-violet-600/70 to-blue-600/70 text-white cursor-not-allowed"
+                    : "bg-gradient-to-r from-violet-500 to-blue-500 text-white hover:from-violet-600 hover:to-blue-600"
+                }`}
+              >
+                {isSuccess ? (
+                  <>
+                    <CheckCircle size={16} />
+                    Request Submitted!
+                  </>
+                ) : isLoading ? (
+                  <>
+                    <Loader2 size={16} className="animate-spin" />
+                    Submitting...
+                  </>
+                ) : (
+                  <>
+                    Get your AI Agent
+                    <ArrowRight size={16} />
+                  </>
+                )}
+              </button>
+            </div>
           </div>
-          <button
-            onClick={handleSubmit}
-            disabled={isLoading || isSuccess}
-            className={`w-full sm:w-auto whitespace-nowrap px-6 py-3 rounded-full transition-all font-medium flex items-center justify-center gap-2 ${
-              isSuccess
-                ? "bg-green-600 text-white"
-                : isLoading
-                ? "bg-violet-600/70 text-white cursor-not-allowed"
-                : "bg-violet-600 text-white hover:bg-violet-700"
-            }`}
-          >
-            {isSuccess ? (
-              <>
-                <CheckCircle size={16} />
-                Request Submitted!
-              </>
-            ) : isLoading ? (
-              <>
-                <Loader2 size={16} className="animate-spin" />
-                Submitting...
-              </>
-            ) : (
-              <>
-                Get your AI Agent
-                <ArrowRight size={16} />
-              </>
-            )}
-          </button>
         </div>
 
         {/* Hero Visual Placeholder */}
         <div className="relative mx-auto w-full max-w-3xl perspective-1000">
           <div className="relative rounded-2xl bg-neutral-900/50 p-2 border border-white/10 shadow-2xl shadow-violet-900/20 backdrop-blur-sm">
-            <Placeholder
+            {/* <Placeholder
               label="Dashboard / Conversation Screenshot"
               height="h-[400px] md:h-[500px]"
+            /> */}
+            <img
+              src="https://static.driffle.com/media-gallery/production/fa6c30be-49d1-4559-80e3-a9e3dc47de08_image-17.png"
+              alt="Dashboard / Conversation Screenshot"
+              className="w-full h-full object-cover rounded-lg"
             />
-
             {/* Floating UI Elements Mockup (CSS only decorations) */}
             <div className="absolute -left-12 top-1/3 hidden md:flex items-center gap-3 bg-neutral-800/90 border border-white/10 p-3 rounded-xl shadow-lg backdrop-blur-md animate-bounce duration-[3000ms]">
               <div className="h-2 w-2 rounded-full bg-green-500"></div>
@@ -146,11 +155,35 @@ const Hero: React.FC = () => {
 
             <div className="absolute -right-8 bottom-1/4 hidden md:flex items-center gap-3 bg-neutral-800/90 border border-white/10 p-3 rounded-xl shadow-lg backdrop-blur-md animate-bounce duration-[4000ms]">
               <div className="h-8 w-8 rounded-full bg-violet-600 flex items-center justify-center text-xs">
-                AI
+                <Bot size={20} />
               </div>
-              <div className="flex flex-col">
+              <div className="flex flex-col text-left">
                 <span className="text-xs font-medium">Ticket Resolved</span>
                 <span className="text-[10px] text-gray-400">Just now</span>
+              </div>
+            </div>
+
+            {/* AI Message */}
+            <div className="absolute -left-16 top-[70%] hidden md:flex items-start gap-3 bg-neutral-800/90 border border-white/10 p-3 rounded-xl shadow-lg backdrop-blur-md animate-bounce duration-[3500ms] max-w-[280px]">
+              <div className="h-8 w-8 rounded-full bg-violet-600 flex items-center justify-center text-xs font-semibold flex-shrink-0">
+                <Bot size={20} />
+              </div>
+              <div className="flex flex-col text-left">
+                <span className="text-xs font-medium text-white">
+                  Hi John! You can return your purchase within 7 days.
+                </span>
+              </div>
+            </div>
+
+            {/* John Message */}
+            <div className="absolute -right-16 top-1/3 hidden md:flex items-start gap-3 bg-neutral-800/90 border border-white/10 p-3 rounded-xl shadow-lg backdrop-blur-md animate-bounce duration-[4500ms] max-w-[280px]">
+              <div className="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center text-xs font-semibold flex-shrink-0">
+                J
+              </div>
+              <div className="flex flex-col text-left">
+                <span className="text-xs font-medium text-white">
+                  How much Time Do i have for my order return
+                </span>
               </div>
             </div>
           </div>
