@@ -126,9 +126,9 @@ const Navbar: React.FC = () => {
           >
             Use Cases
           </a>
-          <a href="#pricing" className="text-gray-300 hover:text-white">
+          {/* <a href="#pricing" className="text-gray-300 hover:text-white">
             Pricing
-          </a>
+          </a> */}
           <button
             onClick={handleScrollToEmail}
             className="w-full rounded-full bg-violet-600 py-2 text-sm font-medium text-white"
