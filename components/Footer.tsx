@@ -11,9 +11,7 @@ const Footer: React.FC = () => {
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-violet-600 text-white">
                 <Bot size={20} />
               </div>
-              <span className="font-semibold text-white text-lg">
-                Nugnics AI Limited
-              </span>
+              <span className="font-semibold text-white text-lg">Nugnics</span>
             </div>
             <div className="text-sm text-gray-400 max-w-xs">
               <p>71-75 Shelton Street, Covent Garden</p>
