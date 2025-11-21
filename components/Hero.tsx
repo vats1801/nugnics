@@ -64,30 +64,33 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section className="relative flex flex-col items-center justify-center pt-32 pb-20 px-4 text-center overflow-hidden">
+    <section className="relative flex mt-8 md:mt-0 flex-col items-center justify-center pt-20 md:pt-32 pb-12 md:pb-20 px-4 text-center overflow-hidden">
       {/* Ambient Glows */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-violet-600/20 opacity-30 blur-[100px] rounded-full pointer-events-none"></div>
 
-      <div className="relative z-10 max-w-4xl mx-auto">
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-white mb-6 leading-[1.1]">
-          Instantly Engage Customers <br />
+      <div className="relative z-10 max-w-4xl mx-auto w-full">
+        <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-white mb-4 md:mb-6 leading-[1.1] px-2">
+          Instantly Engage Customers <br className="hidden sm:block" />
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-300 to-violet-600">
             with Smart AI Chatbots
           </span>
         </h1>
 
-        <p className="text-lg text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-2xl mx-auto mb-6 md:mb-10 leading-relaxed px-2">
           Automate conversations, boost sales, and provide 24/7 support, all
           with one intelligent chatbot platform designed for your business.
         </p>
 
         {/* Input Group */}
-        <div id="email-input" className="mb-16 w-full max-w-xl mx-auto">
-          <div className="relative flex items-center rounded-full bg-gradient-to-r from-blue-500/20 via-violet-500/20 to-blue-500/20 p-[2px] border border-transparent bg-clip-padding">
+        <div
+          id="email-input"
+          className="mb-8 md:mb-16 w-full max-w-xl mx-auto px-4 sm:px-2"
+        >
+          <div className="relative flex flex-col sm:flex-row items-stretch sm:items-center rounded-2xl sm:rounded-full bg-gradient-to-r from-blue-500/20 via-violet-500/20 to-blue-500/20 p-[2px] border border-transparent bg-clip-padding">
             {/* Gradient border effect */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400/50 via-violet-400/50 to-blue-400/50 -z-10 blur-sm"></div>
+            <div className="absolute inset-0 rounded-2xl sm:rounded-full bg-gradient-to-r from-blue-400/50 via-violet-400/50 to-blue-400/50 -z-10 blur-sm"></div>
 
-            <div className="flex flex-1 items-center rounded-full bg-[#050505] overflow-hidden">
+            <div className="flex flex-col sm:flex-row flex-1 items-stretch sm:items-center rounded-2xl sm:rounded-full bg-[#050505] overflow-hidden">
               {/* Input Field */}
               <input
                 type="email"
@@ -99,14 +102,14 @@ const Hero: React.FC = () => {
                   }
                 }}
                 placeholder="Enter your business email"
-                className="flex-1 bg-transparent text-white px-6 py-4 outline-none placeholder:text-gray-500 text-sm"
+                className="flex-1 bg-transparent text-white px-5 sm:px-6 py-4 sm:py-4 outline-none placeholder:text-gray-500 text-base sm:text-base border-b border-white/5 sm:border-b-0 sm:border-r sm:border-white/5"
               />
 
               {/* Button */}
               <button
                 onClick={handleSubmit}
                 disabled={isLoading || isSuccess}
-                className={`whitespace-nowrap px-6 py-4 rounded-full transition-all font-medium flex items-center justify-center gap-2 ${
+                className={`w-full sm:w-auto whitespace-nowrap px-6 py-4 rounded-b-2xl sm:rounded-full transition-all font-medium flex items-center justify-center gap-2 text-base ${
                   isSuccess
                     ? "bg-green-600 text-white"
                     : isLoading
@@ -116,18 +119,18 @@ const Hero: React.FC = () => {
               >
                 {isSuccess ? (
                   <>
-                    <CheckCircle size={16} />
-                    Request Submitted!
+                    <CheckCircle size={18} />
+                    <span>Request Submitted!</span>
                   </>
                 ) : isLoading ? (
                   <>
-                    <Loader2 size={16} className="animate-spin" />
-                    Submitting...
+                    <Loader2 size={18} className="animate-spin" />
+                    <span>Submitting...</span>
                   </>
                 ) : (
                   <>
-                    Get your AI Agent
-                    <ArrowRight size={16} />
+                    <span>Get AI Agent</span>
+                    <ArrowRight size={18} />
                   </>
                 )}
               </button>
@@ -136,8 +139,8 @@ const Hero: React.FC = () => {
         </div>
 
         {/* Hero Visual Placeholder */}
-        <div className="relative mx-auto w-full max-w-3xl perspective-1000">
-          <div className="relative rounded-2xl bg-neutral-900/50 p-2 border border-white/10 shadow-2xl shadow-violet-900/20 backdrop-blur-sm">
+        <div className="relative mx-auto w-full max-w-3xl perspective-1000 px-2">
+          <div className="relative rounded-xl md:rounded-2xl bg-neutral-900/50 p-1 md:p-2 border border-white/10 shadow-2xl shadow-violet-900/20 backdrop-blur-sm">
             {/* <Placeholder
               label="Dashboard / Conversation Screenshot"
               height="h-[400px] md:h-[500px]"
@@ -145,7 +148,7 @@ const Hero: React.FC = () => {
             <img
               src="https://static.driffle.com/media-gallery/production/fa6c30be-49d1-4559-80e3-a9e3dc47de08_image-17.png"
               alt="Dashboard / Conversation Screenshot"
-              className="w-full h-full object-cover rounded-lg"
+              className="w-full h-auto object-cover rounded-lg"
             />
             {/* Floating UI Elements Mockup (CSS only decorations) */}
             <div className="absolute -left-12 top-1/3 hidden md:flex items-center gap-3 bg-neutral-800/90 border border-white/10 p-3 rounded-xl shadow-lg backdrop-blur-md animate-bounce duration-[3000ms]">

@@ -4,27 +4,37 @@ import { Bot, Twitter, Github, Linkedin } from "lucide-react";
 const Footer: React.FC = () => {
   return (
     <footer className="border-t border-white/10 bg-black py-12 px-6">
-      <div className="mx-auto max-w-6xl flex flex-col md:flex-row justify-between items-center gap-6">
-        <div className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-violet-600 text-white">
-            <Bot size={20} />
+      <div className="mx-auto max-w-6xl">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-8">
+          <div className="flex flex-col gap-3">
+            <div className="flex items-center gap-2">
+              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-violet-600 text-white">
+                <Bot size={20} />
+              </div>
+              <span className="font-semibold text-white text-lg">
+                Nugnics AI Limited
+              </span>
+            </div>
+            <div className="text-sm text-gray-400 max-w-xs">
+              <p>71-75 Shelton Street, Covent Garden</p>
+              <p>London, United Kingdom, WC2H 9JQ</p>
+            </div>
           </div>
-          <span className="font-semibold text-white">Nugnics</span>
-        </div>
 
-        <div className="flex gap-6 text-sm text-gray-400">
-          {/* <a href="#" className="hover:text-white transition-colors">
-            Privacy Policy
-          </a>
-          <a href="#" className="hover:text-white transition-colors">
-            Terms of Service
-          </a> */}
-          <div className=" text-center text-xs text-gray-600">
-            © {new Date().getFullYear()} Nugnics. All rights reserved.
+          <div className="flex flex-col items-start md:items-end gap-4">
+            <div className="text-sm text-gray-400">
+              {/* <a href="#" className="hover:text-white transition-colors">
+                Privacy Policy
+              </a>
+              <a href="#" className="hover:text-white transition-colors ml-4">
+                Terms of Service
+              </a> */}
+            </div>
+            <div className="text-xs text-gray-600">
+              © {new Date().getFullYear()} Nugnics AI Limited. All rights
+              reserved.
+            </div>
           </div>
-          {/* <a href="#" className="hover:text-white transition-colors">
-            Cookie Policy
-          </a> */}
         </div>
 
         {/* <div className="flex gap-4 text-gray-400">
