@@ -41,11 +41,12 @@ const BentoGrid: React.FC = () => {
         <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-neutral-900/40 p-1 hover:border-white/20 transition-colors">
           <div className="p-8 h-full flex flex-col">
             <div className="mb-6 h-48 md:h-56">
-              <img
+              {/* <img
                 src="https://static.driffle.com/media-gallery/production/44621467-21f2-4529-98df-025426c30a44_image-10.png"
                 alt="Visual Node Builder"
                 className="w-full h-full object-cover rounded-lg"
-              />
+              /> */}
+              <Placeholder label="Visual Node Builder" height="h-full" />
             </div>
             <div className="mt-auto">
               <h3 className="text-xl font-medium text-white mb-2">
